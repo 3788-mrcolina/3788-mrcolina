@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tarea 2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div style="height: 10px;"></div> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 formularios">
+                <h4>DIRECCIÓN DE ENVÍO</h3>
+                <form action="index.html">
+                    <label for="calle_principal">Calle principal</label> <br>
+                    <input type="text" id="calle_principal" name="calle_principal" required> <br><br>
+                    <label for="transversal">Transversal</label><br>
+                    <input type="text" name="transversal" id="transversal" required><br><br>
+                    <input type="checkbox" name="entrega_propietario" id="entrega_propietario" required>
+                    <label for="entrega_propietario">Entrega al Propietario</label><br>
+                    <input type="checkbox" name="entrega_tercero" id="entrega_tercero" > 
+                    <label for="entrega_tercero">Entrega a un tercero</label><br><br>
+                    <label for="cantones">Cantones:</label>
+                    <select name="cantones" id="cantones" required>
+                        <option value="Quito">Quito</option>
+                        <option value="Ruminahui">Ruminahui</option>
+                        <option value="Cayambe">Cayambe</option>
+                    </select> <br><br>
+                    <button type="submit">ENVIAR DATOS</button>
+                </form>
+            </div>
+            <div class="col-xs-1"></div>
+            <div class="col-md-5 formularios" id="informacion_confidencial" style="display: none;">
+                <H4>INFORMACIÓN CONFIDENCIAL</H4>
+                <form>
+                    <label for="codigo_postal">Código Postal:</label>
+                    <input type="text" id="codigo_postal" name="codigo_postal" required><br>
+                    <label for="referencia_direccion">Referencia de Dirección:</label><br>
+                    <textarea id="referencia_direccion" name="referencia_direccion" rows="4" cols="33" required> </textarea><br><br>
+                    <button type="submit">Guardar</button>
+                </form>
+            </div>
+        </div>
+         
+    </div>
+    
+    <script>
+        var casilla = document.getElementById("entrega_tercero")
+        var mostrar_contenido = document.getElementById("informacion_confidencial")
+
+        casilla.addEventListener("change", function() {
+            if (casilla.checked){
+                mostrar_contenido.style.display = "block";
+            } else {
+                mostrar_contenido.style.display = "none";
+            }
+        });
+
+    </script>
+    <script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+</body>
+
+</html>
+

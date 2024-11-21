@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tarea 2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div style="height: 100px;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-xs-push-2 col-sm-6 col-sm-push-3 col-md-4 col-md-push-4 form-contacto">
+                <h4 class="text-center" style="font-weight: bold;">Contacto</h4>
+                <form id="form_contacto" action="index.html">
+                    <div class="form-group">
+                        <label for="contacto_correo">Correo Electrónico</label><br><br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input class="form-control" type="email" name="contacto_correo" id="contacto_correo"
+                                placeholder="usuario@mail.com" required>
+                        </div>
+                        <br><br>
+                        <label for="fecha_nacimiento">Fecha de Nacimiento</label><br><br>
+                        <div class="input-group">
+                            <span class="input-group-addon"></span>
+                            <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" required>
+                        </div><br><br>
+                        <label for="contacto_telefono">Teléfono</label><br><br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i> </span>
+                            <input class="form-control" type="text" name="contacto_telefono" id="contacto_telefono"
+                                required placeholder="Teléfono">
+                        </div><br><br>
+
+                        <div class="text-center ">
+                            <button id="boton_enviar" type="button" class="btn btn-block btn-warning boton-contacto"
+                                onclick="thisFormSubmit()">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var boton = document.getElementById('boton_enviar')
+        boton.addEventListener("click", function() {
+            boton.classList.add("disabled");
+        });
+
+        function thisFormSubmit() {
+            if (validar()) {
+                boton.textContent = "Enviando...";
+                // retraso para que se vea el mensaje de enviando
+                setTimeout(function(){
+                    document.getElementById('form_contacto').submit();
+                }, 3000)
+            }
+        };
+
+        function validar() {
+            const correo = document.getElementById('contacto_correo').value;
+            const expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+            if (!expresion.test(correo)) {
+                alert('Por favor, ingrese un correo electrónico válido.');
+                return false;
+            }
+
+            const telefono = document.getElementById('contacto_telefono').value;
+            if (telefono.length !== 10 || isNaN(telefono)) {
+                alert('Por favor, ingrese un número de teléfono válido (10 dígitos).');
+                return false;
+            }
+
+            return true;
+
+
+
+        };
+    </script>
+
+    <script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+</body>
+
+</html>

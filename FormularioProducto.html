@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tarea 2</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div style="height: 10px;"></div> 
+    <div class="container">
+        <form action="index.html">
+            <div class="row">
+                <div class="col-xs-12 formularios">
+                    <h4>Datos Básicos</h4>
+                    <label for="nombre_producto">Nombre del Producto</label>
+                    <input type="text" id="nombre_producto" name="nombre_producto" required><br><br>
+                    <label for="descripcion">Descripcion</label><br>
+                    <textarea name="descripcion" id="descripcion" rows="4" cols="30" required></textarea><br><br>
+                    <label for="foto">Foto:</label><br>
+                    <input type="file" id="foto" name="foto"> <br><br>
+                    <input type="checkbox" name="add_info_conf" id="add_info_conf">
+                    <label for="add_info_conf">Añadir información confidencial</label>
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+            <div class="row">
+                <div class="col-xs-12 formularios">
+                    <h4>Datos Economicos</h4>
+                <label for="precio">Precio</label>
+                <input type="number" name="precio" id="precio" required>$ &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp
+                <label for="impuestos">Impuestos</label>
+                <select name="impuestos" id="impuestos">
+                    <option value="4%">4%</option>
+                    <option value="4%">8%</option>
+                    <option value="4%">12%</option>
+                    <option value="4%">15%</option>
+                </select><br><br>
+                <label for="promocion">Promocion</label><br>
+                <input type="radio" name="promocion_ninguno" id="promocion_ninguno">
+                <label for="promocion_ninguno">Ninguno</label><br>
+                <input type="radio" name="promocion_transporte_gratuito" id="promocion_transporte_gratuito">
+                <label for="promocion_transporte_gratuito">Transporte Gratuito</label><br>
+                <input type="radio" name="promocion_desc" id="promocion_desc">
+                <label for="promocion_desc">Descuento 5%</label>   
+                </div>
+            </div>
+            <div style="height: 20px;"></div>
+            <button type="submit">Guardar Cambios</button> &nbsp <button type="reset">Borrar los datos introducidos</button>
+        </form>
+       
+    </div>
+        
+
+
+    <script type="text/javascript" src="js/vendor/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+</body>
+
+</html>
+

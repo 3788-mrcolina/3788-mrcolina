@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.contenedor-index {
+	border: 5px solid gray;
+	border-radius: 15px;
+	padding: 20px;
+	
+}
+
+.color1 {
+	background-color: aqua;
+}
+
+.color2 {
+	background-color: green;
+	height: 300px;
+}
+
+.color3 {
+	background-color: yellow;
+}
+ .color4 {
+	background-color: black;
+	height: 300px;
+ }
+
+ .color5 {
+	background-color: white;
+	height: 300px;
+
+ }
+
+.formularios {
+	border: 1px solid black;
+	padding-bottom: 5px;
+}
+
+.form-contacto {
+	background-color: #f3f3f3;
+	border: 10px solid #dedede;
+}
+
+.form-contacto label {
+	font-weight: normal;
+}
+
+.boton-contacto {
+	border-radius: 20px;
+	background-color: #fdd676;
+	color: #b75854;
+}
